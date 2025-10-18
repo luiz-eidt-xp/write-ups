@@ -12,10 +12,10 @@ Documentar meu aprendizado em cybersegurança através de write-ups detalhados c
 
 | Máquina | Dificuldade | Sistema | Técnicas Principais | Write-up |
 |---------|-------------|---------|---------------------|----------|
-| **Meow** | 🟢 Fácil | Linux | Telnet, Autenticação | [📖 Ver](HTB/Meow.md) |
-| **Fawn** | 🟢 Fácil | Linux | FTP, Login Anônimo | [📖 Ver](HTB/Fawn.md) |
-| **Dancing** | 🟢 Fácil | Windows | SMB, SmbClient | [📖 Ver](HTB/Dancing.md) |
-| **Redeemer** | 🟢 Fácil | Linux | Redis, NoSQL | [📖 Ver](HTB/Redeemer.md) |
+| **Meow** | 🟢 Fácil | Linux | Telnet, Autenticação | [📖 Ver](HTB-HackTheBox/Meow.md) |
+| **Fawn** | 🟢 Fácil | Linux | FTP, Login Anônimo | [📖 Ver](HTB-HackTheBox/Fawn.md) |
+| **Dancing** | 🟢 Fácil | Windows | SMB, SmbClient | [📖 Ver](HTB-HackTheBox/Dancing.md) |
+| **Redeemer** | 🟢 Fácil | Linux | Redis, NoSQL | [📖 Ver](HTB-HackTheBox/Redeemer.md) |
 
 
-*Última atualização: $(date +%d/%m/%)*
+*Última atualização: 18/10/25
