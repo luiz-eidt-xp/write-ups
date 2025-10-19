@@ -41,7 +41,7 @@ PORT     STATE SERVICE VERSION
 
 
 ## ⚡ 2. EXPLORAÇÃO
-2.1 Conexão com o Redis
+### 2.1 Conexão com o Redis
 
 ```bash
 redis-cli -h 10.129.35.253
@@ -85,6 +85,7 @@ CONFIG GET bind
 INFO server
 ```
 
+
 📝 Configurações Perigosas Encontradas:
 
   ❌ Sem senha (requirepass vazio)
@@ -93,6 +94,7 @@ INFO server
 
   🔓 Modo protegido desativado
 
+
 ### 3.2 Dados Adicionais Encontrados
 ```bash
 GET stor
@@ -100,15 +102,6 @@ GET numb
 GET temp
 ```
 
-## ⚠️ VULNERABILIDADES IDENTIFICADAS
-
-- Serviço Redis exposto na internet
-
-- Ausência total de autenticação
-
-- Porta 6379 acessível publicamente
-
-- Versão desatualizada (5.0.7)
 
 ## 🛡️ 4. RECOMENDAÇÕES DE SEGURANÇA
 
