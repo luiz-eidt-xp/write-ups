@@ -13,7 +13,7 @@ A maquina já é da TIER 2 dos Starting Points, essa ela usa um server MySql na 
 ### ⚠️ 0.1 VULNERABILIDADES IDENTIFICADAS
 
 - Ausência de Autenticação como ROOT
-- 
+
 - Serviço Exposto na rede
 
 ## 🔍 1. ENUMERAÇÃO
