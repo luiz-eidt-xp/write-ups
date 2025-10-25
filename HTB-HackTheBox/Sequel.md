@@ -101,7 +101,14 @@ SELECT * FROM config;
 
 🎯 Resultado:
 
-![](../screenshots/sequel/flag.png)
+```bash
++---------------+
+| config |
++---------------------------+
+| flag          | {.......} |
++---------------------------+
+```
+*OBS: Censurei a flag!
 
 ## 🛡️ 3. RECOMENDAÇÕES DE SEGURANÇA
 
