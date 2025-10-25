@@ -6,7 +6,7 @@ Repositório com minhas anotações sobre maquinas e outras coisas que faço sob
 
 Documentar meu aprendizado através de relatórios que escrevo, com passo a passo de máquinas e etc...
 
-# 🏁 Hack The Box - Starting Point
+# Hack The Box - Starting Point
 
 ## && Máquinas Concluídas
 
