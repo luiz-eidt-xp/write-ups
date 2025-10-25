@@ -16,6 +16,7 @@ Documentar meu aprendizado em cybersegurança através de write-ups detalhados c
 | **Fawn** | 🟢 Muto Fácil | Linux | FTP, Login Anônimo | [📖 Ver](HTB-HackTheBox/Fawn.md) |
 | **Dancing** | 🟢 Muito Fácil | Windows | SMB, SmbClient | [📖 Ver](HTB-HackTheBox/Dancing.md) |
 | **Redeemer** | 🟢 Muito Fácil | Linux | Redis, NoSQL | [📖 Ver](HTB-HackTheBox/Redeemer.md) |
+| **Sequel** | 🟢 Muito Fácil | Linux | MySQL, MariaDB | [📖 Ver](HTB-HackTheBox/Sequel.md) |
 
 
-*Última atualização: 18/10/25
+*Última atualização: 25/10/25
