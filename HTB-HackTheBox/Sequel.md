@@ -101,7 +101,7 @@ SELECT * FROM config;
 
 🎯 Resultado:
 
-![](htb/screenshots/sequel/flag.png)
+![](../screenshots/sequel/flag.png)
 
 ## 🛡️ 3. RECOMENDAÇÕES DE SEGURANÇA
 
