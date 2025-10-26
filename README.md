@@ -17,6 +17,7 @@ Documentar meu aprendizado através de relatórios que escrevo, com passo a pass
 | **Dancing** | 🟢 Muito Fácil | Windows | SMB, SmbClient | [Ver](HTB-HackTheBox/Dancing.md) |
 | **Redeemer** | 🟢 Muito Fácil | Linux | Redis, NoSQL | [Ver](HTB-HackTheBox/Redeemer.md) |
 | **Sequel** | 🟢 Muito Fácil | Linux | MySQL, MariaDB | [Ver](HTB-HackTheBox/Sequel.md) |
+| **Crocodile** | 🟢 Muito Fácil | Linux | FTP, Apache | [Ver](HTB-HackTheBox/Crocodile.md) |
 
 
 *Última atualização: 25/10/25
