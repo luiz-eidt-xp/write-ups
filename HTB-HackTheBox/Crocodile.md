@@ -128,6 +128,7 @@ Saída:
 Descobri varios diretorios, a que me chamou atenção foi a login.php
 
 A pagina do login.php:
+
 ![LOGIN](./screenshots/crocodile/http-login.png)
 
 ---
@@ -137,6 +138,7 @@ A pagina do login.php:
 Usando aquela pagina, eu fui testando as credenciais, e uma delas deram certo, mas isso eu não vou mostrar pois pode dar respostas da maquina
 
 Agora na pagina de root a flag já é encontrada:
+
 ![FLAG](./screenshots/crocodile/flag.png)
 
 ---
