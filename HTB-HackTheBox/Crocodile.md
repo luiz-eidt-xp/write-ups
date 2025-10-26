@@ -93,7 +93,7 @@ rKXM59ESxesUFHAd
 ### =Servidor Apache=
 
 O site tinha essa interface principal:
-![PAGE](./screenshots/crocodile/http-page.png)
+![](./screenshots/crocodile/http-page.png)
 
 E é ela que vamos explorar
 
@@ -139,7 +139,7 @@ Usando aquela pagina, eu fui testando as credenciais, e uma delas deram certo, m
 
 Agora na pagina de root a flag já é encontrada:
 
-![FLAG](./screenshots/crocodile/flag.png)
+![](./screenshots/crocodile/flag.png)
 
 ---
 ## {Conclusão}
