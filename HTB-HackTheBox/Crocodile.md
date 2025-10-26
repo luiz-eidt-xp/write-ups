@@ -30,6 +30,7 @@ nmap -sV -sC -p  21-80  10.129.1.15
 ```
  Resultado:
 ![](./screenshots/crocodile/nmap_croc.png)
+
 O parâmetro -sC ja conecta em qualquer servidor FTP que tenha servidor anônimo habilitado!
 
 ---
