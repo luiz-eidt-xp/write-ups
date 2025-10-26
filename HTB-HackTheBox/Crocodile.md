@@ -29,7 +29,30 @@ Usei o comando:
 nmap -sV -sC -p  21-80  10.129.1.15
 ```
  Resultado:
-![](./screenshots/crocodile/nmap_croc.png)
+```bash
+PORT   STATE SERVICE VERSION
+21/tcp open  ftp     vsftpd 3.0.3
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| -rw-r--r--    1 ftp      ftp            33 Jun 08  2021 allowed.userlist
+|_-rw-r--r--    1 ftp      ftp            62 Apr 20  2021 allowed.userlist.passwd
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to ::ffff:10.10.14.148
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 2
+|      vsFTPd 3.0.3 - secure, fast, stable
+|_End of status
+80/tcp open  http    Apache httpd 2.4.41 ((Ubuntu))
+|_http-title: Smash - Bootstrap Business Template
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+Service Info: OS: Unix
+```
 
 O parâmetro -sC ja conecta em qualquer servidor FTP que tenha servidor anônimo habilitado!
 
@@ -50,7 +73,22 @@ ftp> ls
 E agora vamos baixar esses dois arquivos, eu usei o comando **get "nome do arquivo"** e baixei os dois no meu pc
 
 Vamos ver o conteúdo deles usando **cat**
-![](./screenshots/crocodile/ftp-cat.png)
+```bash
+┌──(xpfaint㉿kali)-[~]
+└─$ cat allowed.userlist
+aron
+pwnmeow
+egotisticalsw
+admin
+                                                                                                                                      
+┌──(xpfaint㉿kali)-[~]
+└─$ cat allowed.userlist.passwd
+root
+Supersecretpassword1
+@BaASD&9032123sADS
+rKXM59ESxesUFHAd
+```
+
 
 ### =Servidor Apache=
 
@@ -87,11 +125,7 @@ Saída:
 /server-status        (Status: 403) [Size: 276]
 ```
 
-Descobri varios diretorios, a unicas duas que me interessei foram, login.php e assest
-
-A pagina do assets:
-
-![](./screenshots/crocodile/http-assests.png)
+Descobri varios diretorios, a que me chamou atenção foi a login.php
 
 A pagina do login.php:
 ![](./screenshots/crocodile/http-login.png)
