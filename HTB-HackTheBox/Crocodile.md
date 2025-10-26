@@ -50,6 +50,7 @@ ftp> ls
 E agora vamos baixar esses dois arquivos, eu usei o comando **get "nome do arquivo"** e baixei os dois no meu pc
 
 Vamos ver o conteúdo deles usando **cat**
+
 ![](./screenshots/crocodile/ftp-cat.png)
 
 ### =Servidor Apache=
