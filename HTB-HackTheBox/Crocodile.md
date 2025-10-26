@@ -93,7 +93,7 @@ rKXM59ESxesUFHAd
 ### =Servidor Apache=
 
 O site tinha essa interface principal:
-![](./screenshots/crocodile/http-page.png)
+![PAGE](./screenshots/crocodile/http-page.png)
 
 E é ela que vamos explorar
 
@@ -128,7 +128,7 @@ Saída:
 Descobri varios diretorios, a que me chamou atenção foi a login.php
 
 A pagina do login.php:
-![](./screenshots/crocodile/http-login.png)
+![LOGIN](./screenshost/crocodile/http-login.png)
 
 ---
 ## ^ Escalação de Privilégios
@@ -137,7 +137,7 @@ A pagina do login.php:
 Usando aquela pagina, eu fui testando as credenciais, e uma delas deram certo, mas isso eu não vou mostrar pois pode dar respostas da maquina
 
 Agora na pagina de root a flag já é encontrada:
-![](./screenshots/crocodile/flag.png)
+![FLAG](./screenshost/crocodile/flag.png)
 
 ---
 ## {Conclusão}
