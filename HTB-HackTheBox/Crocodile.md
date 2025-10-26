@@ -89,14 +89,6 @@ Supersecretpassword1
 rKXM59ESxesUFHAd
 ```
 
-
-### =Servidor Apache=
-
-O site tinha essa interface principal:
-![](./screenshots/crocodile/http-page.png)
-
-E é ela que vamos explorar
-
 ### =Gobuster=
 
 Agora no gobuster, eu usei:
