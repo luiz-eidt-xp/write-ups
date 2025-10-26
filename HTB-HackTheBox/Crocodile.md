@@ -94,7 +94,6 @@ A pagina do assets:
 ![](./screenshots/crocodile/http-assests.png)
 
 A pagina do login.php:
-
 ![](./screenshots/crocodile/http-login.png)
 
 ---
